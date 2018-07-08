@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>West Nile Virus Data Visualization</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="line2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+      <div class = "container-fluid">
+        <div class = "jumbotron text-center">
+          <h1>Project Tycho</h1>
+          <h2>West Nile Virus Data Visualization from 2010 to 2017</h2>
+        </div>
+        <hr>
+        <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand logo" href="index.html">
+            <span class="nav-color">Home</span></a>
+          </div>
+          <div class="nav navbar-nav navbar-right">
+              <li><a href="choropleth.html">Interactive Map</a></li>
+              <li><a href="bar_chart.html">Bar Chart</a></li>
+              <li><a href="line.html">Line Graph</a></li>
+              <li><a href="data.html">Data</a></li>
+          </div>
+        </div>
+      </nav>
+    <div id="line"></div>
+    <script type="text/javascript" src="line2.js"></script>
+    <br><br><br>
+  </body>
+</html>

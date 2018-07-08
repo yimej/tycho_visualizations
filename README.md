@@ -1,1 +1,1 @@
-# tycho_visualizations
+# Project_2_Infectious_Disease_Visualizations

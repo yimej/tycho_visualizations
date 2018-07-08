@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>West Nile Virus Data Visualization</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class = "container-fluid">
+        <div class = "jumbotron text-center">
+            <h1>Project Tycho</h1>
+            <h2>West Nile Virus Data Visualization from 2010 to 2017</h2>
+        </div>
+        <hr>
+        <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand logo" href="index.html">
+                <span class="nav-color">Home</span></a>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <li><a href="choropleth.html">Interactive Map</a></li>
+                <li><a href="bar_chart.html">Bar Chart</a></li>
+                <li><a href="line.html">Line Graph</a></li>
+                <li><a href="data.html">Data</a></li>
+            </div>
+        </div>
+    </nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h2>Data</h2>
+						<hr>
+						<p>The table below shows the underlying data we used in our project.  We would like to thank Project Tycho for the use of the data.</p>
+						<p>We utilized a pre compiled data set containing only information on domestic West Nile cases.  We abbreviated the raw data to only include data starting from 2010.  Records before 2010 contained too many instances of missing data and missing reporting periods. This dataset also does not clarify whether the case was domestically obtained or imported from a traveler coming back into the country.</p>
+                        <div id="data_table"></div>
+                        <script>
+                            $(document).ready(function(){
+                              $.ajax({
+                               url:"data_dataset.csv",
+                               dataType:"text",
+                               success:function(data)
+                               {
+                                var data_data = data.split(/\r?\n|\r/);
+                                var table_data = '<table class="table table-bordered table-striped">';
+                                for(var count = 0; count<data_data.length-1; count++)
+                                {
+                                 var cell_data = data_data[count].split(",");
+                                 table_data += '<tr>';
+                                 for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+                                 {
+                                  if(count === 0)
+                                  {
+                                   table_data += '<th>'+cell_data[cell_count]+'</th>';
+                                  }
+                                  else
+                                  {
+                                   table_data += '<td>'+cell_data[cell_count]+'</td>';
+                                  }
+                                 }
+                                 table_data += '</tr>';
+                                }
+                                table_data += '</table>';
+                                $('#data_table').html(table_data);
+                               }
+                              });
+                             
+                             
+                            });
+                            </script>
